@@ -127,4 +127,6 @@ device.json
 gateway.json
 installation.json
 test-oauth2-pcke.py
+read_heating.py
+raw*.json
 *~

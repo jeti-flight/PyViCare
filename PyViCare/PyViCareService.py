@@ -29,9 +29,9 @@ apiURLBase = 'https://api.viessmann.com'
 redirect_uri = "vicare://oauth-callback/everest"
 viessmann_scope=["IoT User"]
 logger = logging.getLogger('ViCare')
-logger.setLevel(logging.DEBUG)
+#logger.setLevel(logging.DEBUG)
 logger.addHandler(logging.NullHandler())
-logger.addHandler(logging.FileHandler('pyvicare.log', mode='a'))
+#logger.addHandler(logging.FileHandler('pyvicare.log', mode='a'))
 #logger.addHandler(logging.StreamHandler())
 
 def readFeature(entities, property_name):
