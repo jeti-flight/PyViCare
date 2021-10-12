@@ -48,9 +48,9 @@ logger.debug ("==== "+str(now)+" ===============================================
 # get all values at once
 try:
     t=GazBoiler("username@mail.de","123456","123sed45t6","token.save")
-    logger.debug("Connection Result:=%s" % t)
+    logger.debug("Connection Result: %s" % t)
 except:
-    logger.critical("Connection Error:=%s" % t)
+    logger.critical("Connection Error: %s" % t)
     sys.exit(1)
 
 # get all in one request
@@ -59,9 +59,9 @@ result = t.getAllEntries()
 # count all data entries
 try:
     data_count = len(result['data'])
-    logger.debug ("Data Count:"+str(data_count))
+    logger.debug ("Data Count: "+str(data_count))
 except:
-    logger.critical("Result:=%s" % result)
+    logger.critical("Result: %s" % result)
     sys.exit(1)
 
 # heating circuit is allways 0
@@ -97,7 +97,7 @@ HeatingGasConsumptionDHW = 0
 HeatingPowerConsumption = 0
 HeatingBurnerHours = 0
 HeatingBurnerStarts = 0
-HeatingSupplyPressure = 0
+HeatingSupplyPressure = 1
 
 # extra run to get HeatingProgram, TimeOffset, HeatingMode
 for feature_number in range(data_count) :
@@ -162,11 +162,11 @@ for feature_number in range(data_count) :
 
     # ("heating.circuits.0.sensors.temperature.supply")["properties"]["value"]["value"]
     # ("heating.boiler.sensors.temperature.commonSupply"["properties"]["value"]["value"]
-    device_feature = 'heating.boiler.sensors.temperature.commonSupply'
+    device_feature = 'heating.circuits.0.sensors.temperature.supply'
+    # device_feature = 'heating.boiler.sensors.temperature.commonSupply'
     if device_feature == feature :
         HeatingSupplyTemperature = result['data'][feature_number]['properties']['value']['value']
         logger.debug (device_feature + ' : ' + str(HeatingSupplyTemperature))
-        logger.debug ('HeatingSupplyTemperatureTarget' + ' : ' + str(HeatingSupplyTemperatureTarget))
 
     # ("heating.dhw.temperature.main")["properties"]["value"]["value"]
     # the normal temperature here
@@ -181,10 +181,6 @@ for feature_number in range(data_count) :
     if device_feature == feature :
         HeatingDHWTemperatureHygiene = result['data'][feature_number]['properties']['value']['value']
         logger.debug ("'HeatingDHWTemperatureHygiene'" + ' : ' + str(HeatingDHWTemperatureHygiene))
-
-    # for simplicity set target == main
-    HeatingDHWTemperatureTarget = HeatingDHWTemperatureMain
-    logger.debug ("'HeatingDHWTemperatureTarget'" + ' : ' + str(HeatingDHWTemperatureTarget))
 
     # ("heating.dhw.sensors.temperature.hotWaterStorage")["properties"]["value"]["value"]
     device_feature = 'heating.dhw.sensors.temperature.hotWaterStorage'
@@ -235,15 +231,15 @@ for feature_number in range(data_count) :
             HeatingGasConsumptionDHW = result['data'][feature_number]['properties']['day']['value'][0]
         logger.debug (device_feature + ' : ' + str(HeatingGasConsumptionDHW) )
 
-    # 'heating.power.consumption')['properties']['day']['value'][0]
-    device_feature = 'heating.power.consumption'
+    # 'heating.power.consumption.total')['properties']['day']['value'][0]
+    device_feature = 'heating.power.consumption.total'
     if device_feature == feature :
         try :
             if now > midnight_offset :
                 HeatingPowerConsumption = result['data'][feature_number]['properties']['day']['value'][0]
+                logger.debug (device_feature + ' : ' + str(HeatingPowerConsumption) )
         except :
             HeatingPowerConsumption = 0
-        logger.debug (device_feature + ' : ' + str(HeatingPowerConsumption) )
 
     # ('heating.burners.0.statistics')['properties']['hours']['value'
     # ('heating.burners.0.statistics')['properties']['starts']['value'
@@ -259,6 +255,10 @@ for feature_number in range(data_count) :
     if device_feature == feature :
         HeatingSupplyPressure = str(result['data'][feature_number]['properties']['value']['value'])
         logger.debug (device_feature + ' : ' + HeatingSupplyPressure )
+
+# for simplicity set target == main
+HeatingDHWTemperatureTarget = HeatingDHWTemperatureMain
+logger.debug ("'HeatingDHWTemperatureTarget'" + ' : ' + str(HeatingDHWTemperatureTarget))
 
 logger.debug ("====================================================================================================")
 

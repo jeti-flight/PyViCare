@@ -162,7 +162,7 @@ class Device:
 
     @handleNotSupported
     def getActiveMode(self):
-        return self.service.getProperty("heating.circuits." + str(self.service.circuit) + ".operating.modes.active")["properties"]["value"]["value"]
+        return self.service.getProperty("heating.circuits." + str(self.service.circuit) + ".operating.modes.active")["data"]["properties"]["value"]["value"]
 
     @handleNotSupported
     def getHeatingCurveShift(self):
