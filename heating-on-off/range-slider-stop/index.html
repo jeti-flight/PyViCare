@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Range Slider With Stop Points Examples</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./assets/css/slider.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+  padding: 0;
+  font-family: 'Roboto Condensed';
+}
+.container { margin: 150px auto; max-width: 960px; }
+</style>
+</head>
+<body><div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="https://www.jqueryscript.net/form/range-slider-stop.html">Download This Plugin</a></li>
+<li><a href="https://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul><div id="carbon-block"></div>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+    <div class="container">
+        <h1>Range Slider With Stop Points Examples</h1>
+        <p>A lightweight jQuery plugin that helps you create a customizable, responsive, touch-enabled range slider UI with stop points.</p>
+    <div id="slide-test-1">
+        <div id="range-1" class="range">
+            <input id="input-range-1" type="range" min="1" max="7" steps="1" value="1">
+        </div>
+        <ul id="labels-range-1" class="range-labels">
+            <li data-stop=12 class="active selected">12 hrs</li>
+            <li data-stop=24>24 hrs</li>
+            <li data-stop=48>48 hrs</li>
+            <li data-stop=72>72 hrs</li>
+            <li data-stop=120>5 days</li>
+            <li data-stop=240>10 days</li>
+            <li data-stop=360>15 days</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="slide-test-2">
+        <div id="range-2" class="range">
+            <input id="input-range-2" type="range" min="1" max="7" steps="1" value="1">
+        </div>
+        <ul id="labels-range-2" class="range-labels">
+            <li data-stop=12 class="active selected">12 hrs</li>
+            <li data-stop=24>24 hrs</li>
+            <li data-stop=48>48 hrs</li>
+            <li data-stop=72>72 hrs</li>
+            <li data-stop=120>5 days</li>
+            <li data-stop=240>10 days</li>
+            <li data-stop=360>15 days</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="slide-test-3">
+        <div id="range-3" class="range">
+            <input id="input-range-3" type="range" min="1" max="7" steps="1" value="1">
+        </div>
+        <ul id="labels-range-3" class="range-labels">
+            <li data-stop=12 class="active selected">12 hrs</li>
+            <li data-stop=24>24 hrs</li>
+            <li data-stop=48>48 hrs</li>
+            <li data-stop=72>72 hrs</li>
+            <li data-stop=120>5 days</li>
+            <li data-stop=240>10 days</li>
+            <li data-stop=360>15 days</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="slide-test-4">
+        <div id="range-4" class="range">
+            <input id="input-range-4" type="range" min="1" max="5" steps="1" value="1">
+        </div>
+        <ul id="labels-range-4" class="range-labels">
+            <li data-stop=1 class="active selected">Mon</li>
+            <li data-stop=2>Tue</li>
+            <li data-stop=3>Wed</li>
+            <li data-stop=4>Thi</li>
+            <li data-stop=5>Fri</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="slide-test-5">
+        <div id="range-5" class="range">
+            <input id="input-range-5" type="range" min="1" max="3" steps="1" value="1">
+        </div>
+        <ul id="labels-range-5" class="range-labels">
+            <li data-stop="yes" class="active selected">Yes</li>
+            <li data-stop="idunno">Maybe?</li>
+            <li data-stop="nope!">NO</li>
+        </ul>
+    </div>
+</div>
+    <script type="text/javascript" src="./assets/js/slider.js"></script>
+    <script type="text/javascript">
+        function autorun() {
+            slider('range-1');
+            slider('range-2');
+            slider('range-3');
+            slider('range-4');
+            slider('range-5');
+        };
+        if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
+        else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
+        else window.onload = autorun;
+    </script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+</body>
+</html>

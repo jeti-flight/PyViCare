@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>JQuery Simple toggler!</title>
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!-- 1140px Grid styles for IE -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+	<!-- The 1140px Grid - http://cssgrid.net/ -->
+    <link rel="stylesheet" href="css/normalize.min.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
+
+    <link rel="stylesheet" href="css/ui-toggle.css" type="text/css" media="screen" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery.toggler.js"></script>
+
+<style>
+body { background-color:#fafafa; font-family:'Roboto';}
+h2 { margin:10px auto; font-size:14px;}
+</style>
+</head>
+
+
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="https://www.jqueryscript.net/form/Sliding-Switch-jQuery-simpleToggler.html">Download This Plugin</a></li>
+<li><a href="https://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+    <h1 style="margin:150px auto 30px auto; text-align:center;">jQuery simpleToggler Plugin Demos</h1>
+    <div class="container page">
+        <div class="row">
+            <div class="content" style=" text-align:center;">
+<h2>Default</h2>
+                <input id="checkbox1" type="checkbox" class="checkbox"/>
+
+                <br class="clear"/>
+                <br class="clear"/>
+<h2>Custom Labels</h2>
+                <input id="checkbox2" type="checkbox" class="checkbox"/>
+
+            </div>
+        </div>
+    </div>
+   
+
+    <script type="text/javascript">
+        $(function(){
+
+            $('#checkbox1').checkToggler({
+                labelOn:'On',
+                labelOff:'Off'
+            });
+
+            $('#checkbox2').checkToggler({
+                labelOn:'JQuery',
+                labelOff:'React'
+            });
+
+        });
+    </script>
+
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>
