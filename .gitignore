@@ -117,6 +117,9 @@ PyViCare/__init__.py
 
 .DS_Store
 
+read_heating_v2.py
+set_dhw.py
+set_dhwAndHeating.py
 all-raw.json
 token.save
 one-request.py
